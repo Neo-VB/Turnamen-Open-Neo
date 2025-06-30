@@ -1,0 +1,360 @@
+/* ========== GLOBAL SETUP ========== */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  background: url('Logo Neo.png') no-repeat center center fixed;
+  background-size: contain;
+  background-color: #0d0c2b;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(13, 12, 43, 0.85);
+  z-index: -1;
+}
+
+main {
+  flex: 1;
+}
+
+/* ========== HEADER ========== */
+header {
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav .btn {
+  background-color: #ff5722;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+nav .btn:hover {
+  background-color: #e64a19;
+}
+
+/* ========== STATISTIK ========== */
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 20px;
+}
+
+.stat-box {
+  background-color: rgba(27, 25, 58, 0.85);
+  border: 2px solid rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 30px 40px;
+  min-width: 250px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease;
+}
+
+.stat-box:hover {
+  transform: scale(1.05);
+}
+
+.stat-box i {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: #ccc;
+}
+
+.blue { color: #3abaff; }
+.yellow { color: #ffd700; }
+
+/* ========== COUNTDOWN ========== */
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  flex-wrap: wrap;
+}
+
+.flip-box {
+  background-color: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 80px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  text-align: center;
+  perspective: 1000px;
+}
+
+.number {
+  display: inline-block;
+  transition: transform 0.5s ease;
+}
+
+.flip {
+  animation: flipAnim 0.5s ease;
+}
+
+@keyframes flipAnim {
+  0%   { transform: rotateX(0deg); }
+  50%  { transform: rotateX(90deg); opacity: 0.3; }
+  100% { transform: rotateX(0deg); opacity: 1; }
+}
+
+#countdown small {
+  display: block;
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+/* ========== SECTION CONTAINER ========== */
+.container {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 10px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  font-size: 24px;
+  color: #ffcc80;
+  border-bottom: 2px solid #555;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.map {
+  width: 100%;
+  height: 300px;
+  margin-top: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background-color: #2c2c2c;
+  color: white;
+  padding: 40px 20px;
+  font-size: 14px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  flex-wrap: wrap;
+}
+
+.footer-top h3 {
+  color: hwb(33 90% 7%);
+  margin-bottom: 10px;
+}
+
+footer .contact p {
+  margin: 5px 0;
+  color: #ccc;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.icon-social {
+  width: 40px;
+  height: 40px;
+  opacity: 0.85;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.icon-social:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* ========== ACCORDION (INFO.HTML) ========== */
+.accordion-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.accordion-btn {
+  background-color: rgba(255,255,255,0.08);
+  color: #fff;
+  border: none;
+  padding: 15px 20px;
+  font-size: 16px;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.accordion-btn:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+
+.accordion-content {
+  background-color: rgba(255,255,255,0.05);
+  max-height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 0 20px;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-content ul {
+  padding: 15px 0 15px 20px;
+  margin: 0;
+  list-style-type: disc;
+}
+
+.accordion-content p, 
+.accordion-content img {
+  padding: 15px 0;
+  margin: 0;
+}
+
+.accordion-content iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  margin-top: 10px;
+  border: none;
+}
+
+/* WhatsApp Button */
+.btn-wa {
+  display: inline-block;
+  padding: 7px 14px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.btn-wa:hover {
+  transform: scale(1.05);
+  background-color: #1ebc5a;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .accordion-btn {
+    font-size: 15px;
+  }
+
+  .flip-box {
+    min-width: 70px;
+    padding: 15px;
+  }
+
+  #countdown {
+    gap: 20px;
+  }
+}

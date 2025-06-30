@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turnamen Open Neo</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="Logo Neo.png" alt="Logo Neo" />
+      <span>Turnamen Open Neo</span>
+    </a>
+    <nav>
+      <a href="#tentang">Tentang Neo</a>
+      <a href="info.html">Informasi Turnamen</a>
+      <a href="https://forms.gle/UtufZtSFyBmVoLFk9" target="_blank" class="btn">Daftar Sekarang</a>
+    </nav>
+  </header>
+
+  <!-- STATISTIK -->
+  <section class="stats-container">
+    <div class="stat-box">
+      <i class="fas fa-coins blue"></i>
+      <div class="stat-number">Rp 3.000.000</div>
+      <div class="stat-label">Total Hadiah</div>
+    </div>
+    <div class="stat-box">
+      <i class="fas fa-award yellow"></i>
+      <div class="stat-number">12</div>
+      <div class="stat-label">Total Tim</div>
+    </div>
+  </section>
+
+  <!-- HITUNG MUNDUR -->
+  <section class="countdown-container">
+    <div id="countdown">
+      <div class="flip-box">
+        <span id="days" class="number">00</span><small>Hari</small>
+      </div>
+      <div class="flip-box">
+        <span id="hours" class="number">00</span><small>Jam</small>
+      </div>
+      <div class="flip-box">
+        <span id="minutes" class="number">00</span><small>Menit</small>
+      </div>
+      <div class="flip-box">
+        <span id="seconds" class="number">00</span><small>Detik</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <h3>Contact Person :</h3>
+        <p>Bayu<br>
+          <a href="https://wa.me/6285925392052?text=Halo%20saya%20mau%20tanya%20tentang%20info%20turnamen" target="_blank" class="btn-wa">Hubungi Saya</a>
+        </p>
+        <p>Hendra<br>
+          <a href="https://wa.me/6287724083475?text=Halo%20saya%20mau%20tanya%20tentang%20info%20turnamen" target="_blank" class="btn-wa">Hubungi Saya</a>
+        </p>
+      </div>
+      <div class="social-media">
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+          <img src="logo ig.png" alt="Instagram" class="icon-social" />
+        </a>
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <img src="logo fb.png" alt="Facebook" class="icon-social" />
+        </a>
+        <a href="https://www.tiktok.com/id-ID/" target="_blank" aria-label="TikTok">
+          <img src="logo tt.png" alt="TikTok" class="icon-social" />
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 Turnamen Open Neo · All rights reserved<br>
+      Design by 
+      <a href="https://instagram.com/jajanghidayaat" target="_blank" style="color: #ffffff; text-decoration: none;">
+        Jajang Hidayat
+      </a>
+    </div>
+  </footer>
+
+  <!-- SCRIPT HITUNG MUNDUR -->
+  <script>
+    const targetDate = new Date("2025-08-23T08:00:00").getTime();
+
+    const updateTime = (id, value) => {
+      const el = document.getElementById(id);
+      if (el.innerText !== value) {
+        el.classList.add('flip');
+        el.innerText = value;
+        setTimeout(() => el.classList.remove('flip'), 500);
+      }
+    };
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        document.getElementById("countdown").innerHTML = "<p>Turnamen telah dimulai!</p>";
+        return;
+      }
+
+      const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+      updateTime("days", String(d).padStart(2, '0'));
+      updateTime("hours", String(h).padStart(2, '0'));
+      updateTime("minutes", String(m).padStart(2, '0'));
+      updateTime("seconds", String(s).padStart(2, '0'));
+    }, 1000);
+  </script>
+
+</body>
+</html>
