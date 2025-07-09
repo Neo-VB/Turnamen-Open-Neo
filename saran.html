@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saran & Kritik | Turnamen Open Neo</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: url('Logo Neo.png') no-repeat center center fixed;
+      background-size: contain;
+      background-color: #0d0c2b;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    #saran {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 12px;
+      color: white;
+      margin: 2rem auto;
+      max-width: 600px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    #saran input,
+    #saran textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      background-color: rgba(255,255,255,0.1);
+      color: white;
+    }
+
+    #saran button {
+      background-color: #e53935;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #saran button:hover {
+      background-color: #c62828;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Saran & Kritik</h1>
+    <p>Silakan isi form di bawah untuk membantu kami lebih baik lagi</p>
+  </header>
+
+  <section id="saran">
+    <form onsubmit="event.preventDefault(); alert('Terima kasih atas masukannya!');">
+      <label for="nama">Nama (opsional):</label>
+      <input type="text" id="nama" name="nama" placeholder="Nama kamu...">
+
+      <label for="pesan">Pesan:</label>
+      <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis saran atau kritik..."></textarea>
+
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Turnamen Open Neo • neo-vb.github.io
+  </footer>
+
+</body>
+</html>
