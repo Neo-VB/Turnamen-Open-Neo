@@ -434,6 +434,8 @@ footer .contact p {
   background-color: #ff5f65;
 }
 
+live
+
 /* Reset dasar */
 * {
   box-sizing: border-box;
@@ -526,7 +528,7 @@ body {
 
 /* FOOTER */
 footer {
-  background: rgba(0,0,0,0.6);
+  background: #2c2c2c;
   padding: 1rem;
   text-align: center;
   font-size: 0.9rem;
