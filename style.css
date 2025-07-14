@@ -433,3 +433,35 @@ footer .contact p {
 .download-btn:hover {
   background-color: #ff5f65;
 }
+
+.live-stream-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.live-title {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.live-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.live-button img {
+  height: 150px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.live-button img:hover {
+  transform: scale(1.1) rotate(5deg);
+  opacity: 0.8;
+}
